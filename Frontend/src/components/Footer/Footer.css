@@ -1,0 +1,65 @@
+/* Footer Style */
+
+footer {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(12,12,68,1) 35%, rgba(244,6,79,0.936186974789916) 100%);
+    background-size: 200% 200%; /* Larger background size for animation */
+    animation: gradientAnimation 10s ease infinite; /* Animate the gradient */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0; /* Vertical padding for spacing */
+    font-family: 'Poppins', sans-serif; /* Simple, readable font */
+    font-size: 0.9em; /* Smaller font size */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+  
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #f4064f; /* Accent color */
+}
+
+.back-to-top {
+    display: block;
+    margin-top: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: #f4064f; /* Accent color */
+}
+  
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.8em; /* Smaller font size for mobile */
+        padding: 15px 10px; /* Adjust padding for mobile */
+    }
+}
