@@ -1,0 +1,60 @@
+/* Hero (Landing) Page Styling...  */
+
+.landing-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 30px;
+    background: linear-gradient(90deg, rgba(244,6,79,0.936186974789916) 0%, rgba(12,12,68,1) 35%, rgba(2,0,36,1) 100%);
+    color: #fff;
+    min-height: 75vh;
+}
+
+.intro-text {
+    min-width: 50%;
+}
+
+.intro-text h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'Caveat', cursive; /* Custom font for the heading */
+}
+
+.intro-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
+
+.profile-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .landing-page {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 15px  ;
+    }
+
+    .intro-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .intro-text h1 {
+        font-size: 2.5em;
+    }
+
+    .intro-text p {
+        font-size: 1em;
+    }
+
+    .profile-image img {
+        width: 200px;
+    }
+}

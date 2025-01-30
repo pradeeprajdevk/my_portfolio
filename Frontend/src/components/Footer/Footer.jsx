@@ -1,17 +1,12 @@
 import { useState, useEffect } from "react";
 import "./Footer.css";
+import PropTypes from "prop-types";
 
-export const Footer = () => {
+export const Footer = ({ user }) => {
 
     const currentYear = new Date().getFullYear();
 
     const [showBackToTop, setShowBackToTop] = useState(false);
-
-    const socialLinks = [
-        { id: 1, url: "https://github.com/yourusername", icon: "fab fa-github", label: "GitHub" },
-        { id: 2, url: "https://linkedin.com/in/yourusername", icon: "fab fa-linkedin", label: "LinkedIn" },
-        { id: 3, url: "https://twitter.com/yourusername", icon: "fab fa-twitter", label: "Twitter" },
-    ];
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -36,10 +31,10 @@ export const Footer = () => {
     return (
         <footer aria-label="Footer">
             <p>
-                © {currentYear} PradeepRaj.K, All rights reserved
+                © {currentYear} {user ? user.name : "PradeepRaj.K"}, All rights reserved
             </p>
             <div className="social-links">
-                {socialLinks.map((link) => ( 
+                {user.socialLinks.map((link) => ( 
                     <a key={link.id} href={link.url} aria-label={link.label}>
                         <i className={link.icon}></i>
                     </a>
@@ -54,3 +49,9 @@ export const Footer = () => {
     )
 }
   
+Footer.propTypes = {
+    user: PropTypes.shape({
+        name: PropTypes.string,
+        socialLinks: PropTypes.array,
+    })
+};
