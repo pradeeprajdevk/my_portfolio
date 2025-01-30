@@ -5,6 +5,7 @@ import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
 import { fetchUserData } from "./services/userServices"; // Import the service
 import { Hero } from './components/Hero/Hero';
+import { About } from './components/About/About';
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -39,6 +40,7 @@ function App() {
       <Header user={userData[0]}/>
       
       <Hero user={userData[0]} />
+      <About />
       
       <Footer user={userData[0]}/>
     </>
