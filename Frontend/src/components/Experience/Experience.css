@@ -1,0 +1,108 @@
+.experience-section {
+    padding: 60px 30px;
+    background: linear-gradient(90deg, rgba(244,6,79,0.936186974789916) 0%, rgba(12,12,68,1) 35%, rgba(2,0,36,1) 100%);
+    color: #fff;
+}
+.experience-section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Caveat', cursive;
+}
+
+.experience-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+.experience-timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #090945; /* Accent color */
+}
+
+.experience-card {
+    position: relative;
+    background-color: #1e1e1e;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.experience-card::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: #090945; /* Accent color */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.experience-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.experience-card h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #f4064f;
+    font-family: 'Poppins', sans-serif;
+}
+
+.experience-card .duration {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.experience-card .description {
+    font-size: 1em;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experience-section {
+        padding: 40px 50px;
+    }
+
+    .experience-section h2 {
+        font-size: 2em;
+    }
+
+    .experience-card {
+        padding: 15px;
+    }
+
+    .experience-card h3 {
+        font-size: 1.3em;
+    }
+
+    .experience-card h4 {
+        font-size: 1.1em;
+    }
+
+    .experience-card .description {
+        font-size: 0.9em;
+    }
+
+}
