@@ -1,0 +1,36 @@
+.up-arrow-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+    text-decoration: none;
+}
+
+.up-arrow {
+    background-image: linear-gradient(to right, #E91E63, #303F9F);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
+}
+
+.up-arrow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .up-arrow-container {
+        bottom: 10px;
+        left: 10px;
+    }
+    .up-arrow {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}

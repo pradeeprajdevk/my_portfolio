@@ -45,7 +45,6 @@ export const Footer = ({ user }) => {
                     ↑ Back to Top
                 </a>
             )}
-            {console.log("showBackToTop", showBackToTop)}
         </footer>
     )
 }
