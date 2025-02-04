@@ -9,7 +9,8 @@ footer {
     padding: 20px 0; /* Vertical padding for spacing */
     font-family: 'Poppins', sans-serif; /* Simple, readable font */
     font-size: 0.9em; /* Smaller font size */
-    position: fixed;
+    /* position: fixed; */
+    position: relative; 
     z-index: 1000;
     width: 100%;
     bottom: 0;
@@ -44,18 +45,20 @@ footer {
 
 .back-to-top {
     display: block;
-    margin-top: 10px;
+    margin: 20px auto 0;
+    padding: 10px 20px;
     color: #fff;
-    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8em;
-    background: none;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 1em;
     transition: color 0.3s ease;
 }
 
 .back-to-top:hover {
-    color: #f4064f; /* Accent color */
+    color: #d8f406;
 }
   
 @media (max-width: 768px) {

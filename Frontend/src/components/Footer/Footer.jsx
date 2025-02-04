@@ -17,7 +17,7 @@ export const Footer = ({ user }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if(window.screenY > 300) {
+            if(window.scrollY > 300) {
                 setShowBackToTop(true);
             } else {
                 setShowBackToTop(false);
@@ -45,6 +45,7 @@ export const Footer = ({ user }) => {
                     ↑ Back to Top
                 </a>
             )}
+            {console.log("showBackToTop", showBackToTop)}
         </footer>
     )
 }

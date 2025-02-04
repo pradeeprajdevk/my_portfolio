@@ -1,0 +1,120 @@
+.contact-section {
+    padding: 60px 30px;
+    background-color: #121212;
+    color: #fff;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Caveat', cursive;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.contact-info h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-family: 'Caveat', cursive;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-details i {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: #f4064f;
+}
+
+.contact-form {
+    max-width: 50%;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #f4064f;
+    outline: none;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4064f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hove {
+    background-color: #c4053d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .contact-info {
+        margin-bottom: 30px;
+    }
+}
