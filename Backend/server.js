@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
-import { UserRoute, ProjectRoute } from './routes/index.js';
+import { UserRoute, ProjectRoute, AboutRoute } from './routes/index.js';
 
 // Set the path for the environment file based on NODE_ENV
 const envFile =
@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
 
 app.use('/users', UserRoute);
 app.use('/projects', ProjectRoute);
+app.use('/about', AboutRoute);
 
 const PORT = process.env.PORT || 8001;
 
