@@ -63,3 +63,4 @@ Header.propTypes = {
         name: PropTypes.string,
     })
 };
+Header.displayName = 'Header'; 
