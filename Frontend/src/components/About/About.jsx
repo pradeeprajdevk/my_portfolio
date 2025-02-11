@@ -35,8 +35,16 @@ export const About = () => {
         <section id = "about" className="about-section">
             <h2>About Me</h2>
             <div className="about-content">
-                <div className="about-text">
-                    <p  style={{ whiteSpace: 'pre-line' }}>{aboutData.description}</p>
+                <div className="about-text-container">  
+                    <div className="about-text">
+                        <p  style={{ whiteSpace: 'pre-line' }}>{aboutData.description}</p>
+                    </div>
+                    <div className="about-download">
+                        <a href="/resume/PradeepRajK.pdf" download="PradeepRajK.pdf"
+                        className="resume-button">
+                            Download Resume
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
