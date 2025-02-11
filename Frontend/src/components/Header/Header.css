@@ -4,14 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(90deg, rgba(244,6,79,0.936186974789916) 0%, rgba(12,12,68,1) 35%, rgba(2,0,36,1) 100%);
+    background-color: #d62828;
     padding: 15px 30px;
     color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-container a {
-    font-family: 'Caveat', sans-serif; /* Custom font */
+    font-family: 'Caveat', cursive; /* Custom font */
     font-size: 1.8em; /* Large font size */
     font-weight: 700; /* Bold weight for emphasis */
     text-decoration: none;
@@ -19,6 +19,14 @@
     text-transform: uppercase; /* Capitalize text */
     letter-spacing: 2px; /* Slightly spaced letters for a more modern feel */
     transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover */
+}
+
+.header-container a::first-letter {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-weight: 700; /* Bold weight for the letter */
 }
 
 .header-container a:hover {
@@ -35,7 +43,7 @@
 }
 
 .nav_title a {
-    font-family: 'Poppins', sans-serif; /* Simple, readable font */
+    font-family: 'Caveat', cursive; /* Simple, readable font */
     text-decoration: none;
     color: #fff;
     font-size: 1.1em;
@@ -43,7 +51,7 @@
 }
 
 .nav_title a:hover {
-    color: #f4064f;
+    color: #000000;
 }
   
 /* Add responsiveness for mobile view */

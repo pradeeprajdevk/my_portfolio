@@ -2,9 +2,8 @@
 
 .about-section {
     padding: 60px 30px;
-    /*background-color: #121212; /* Match the background color of the header/footer */
-    background: linear-gradient(90deg, rgba(244,6,79,0.936186974789916) 0%, rgba(12,12,68,1) 35%, rgba(2,0,36,1) 100%);
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .about-section h2 {
@@ -41,9 +40,9 @@
 }
 
 .resume-button {
-    background-color: #4CAF50;
+    background-color: #fe5f55;
     border: none;
-    color: white;
+    color: #ffffff;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -56,7 +55,7 @@
 }
 
 .resume-button:hover {
-    background-color: #3e8e41;
+    background-color: #d90429;
 }
 
 /* Responsive Design */

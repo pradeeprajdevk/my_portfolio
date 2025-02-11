@@ -59,6 +59,9 @@ function App() {
       top: 0,
       behavior: 'smooth'
     });
+
+    // Update the URL without reloading the page
+    history.pushState(null, '', '#');
   };
 
   return (

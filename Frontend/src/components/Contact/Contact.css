@@ -1,7 +1,7 @@
 .contact-section {
     padding: 60px 30px;
-    background: linear-gradient(90deg, rgba(244,6,79,0.936186974789916) 0%, rgba(12,12,68,1) 35%, rgba(2,0,36,1) 100%);
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .contact-section h2 {
@@ -47,7 +47,7 @@
 .contact-details i {
     font-size: 1.2em;
     margin-right: 10px;
-    color: #090945;
+    color: #d62828;
 }
 
 .contact-form {
@@ -76,13 +76,19 @@
     border-radius: 5px;
     background-color: #1e1e1e;
     color: #fff;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #f4064f;
+    border-color: #d62828;
+    background-color: #333 !important;
     outline: none;
+}
+
+.form-group input:active,
+.form-group textarea:active {
+    background-color: #444 !important;  /* Change while typing or interacting */
 }
 
 .submit-button {
@@ -91,16 +97,16 @@
     padding: 10px;
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
-    background-color: #f4064f;
-    color: #fff;
+    background-color: #d62828;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.submit-button:hove {
-    background-color: #c4053d;
+.submit-button:hover {
+    background-color: #c1121f;
 }
 
 /* Responsive Design */

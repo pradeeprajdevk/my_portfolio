@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(to bottom, #E91E63, #303F9F);
+    background-color: #d62828;
     color: white;
     font-family: 'Poppins', sans-serif;
 }

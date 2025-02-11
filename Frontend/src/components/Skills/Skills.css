@@ -1,7 +1,7 @@
 .skills-section {
     padding: 60px 30px;
-    background: linear-gradient(90deg, rgba(244,6,79,0.936186974789916) 0%, rgba(12,12,68,1) 35%, rgba(2,0,36,1) 100%);
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .skills-section h2 {
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: #1e1e1e;
+    background-color: #e5e5e5;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow .3s ease;

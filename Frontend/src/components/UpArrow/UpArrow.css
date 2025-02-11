@@ -7,8 +7,8 @@
 }
 
 .up-arrow {
-    background-image: linear-gradient(to right, #E91E63, #303F9F);
-    color: white;
+    background-color: #d62828;
+    color: #ffffff;
     padding: 10px 15px;
     border-radius: 50%;
     font-size: 20px;

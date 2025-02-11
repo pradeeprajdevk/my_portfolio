@@ -13,6 +13,9 @@ export const Footer = ({ user }) => {
             top: 0,
             behavior: "smooth", // smooth scrolling
         });
+
+        // Update the URL without reloading the page
+        history.pushState(null, '', '#');
     }
 
     useEffect(() => {
@@ -41,9 +44,9 @@ export const Footer = ({ user }) => {
                 ))}
             </div>
             {showBackToTop && (
-                <a href="#top" className="back-to-top" onClick={scrollToTop} aria-label="Back to Top">
+                <button className="back-to-top" onClick={scrollToTop} aria-label="Back to Top">
                     ↑ Back to Top
-                </a>
+                </button>
             )}
         </footer>
     )

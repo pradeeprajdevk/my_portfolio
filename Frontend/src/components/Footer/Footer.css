@@ -1,7 +1,7 @@
 /* Footer Style */
 
 footer {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(12,12,68,1) 35%, rgba(244,6,79,0.936186974789916) 100%);
+    background-color: #d62828;
     background-size: 200% 200%; /* Larger background size for animation */
     animation: gradientAnimation 10s ease infinite; /* Animate the gradient */
     color: #fff;
@@ -40,7 +40,7 @@ footer {
 }
 
 .social-links a:hover {
-    color: #f4064f; /* Accent color */
+    color: #333; /* Accent color */
 }
 
 .back-to-top {
@@ -51,6 +51,7 @@ footer {
     font-family: 'Poppins', sans-serif;
     font-size: 0.8em;
     border: none;
+    background: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
@@ -58,7 +59,7 @@ footer {
 }
 
 .back-to-top:hover {
-    color: #d8f406;
+    color: #000000;
 }
   
 @media (max-width: 768px) {
