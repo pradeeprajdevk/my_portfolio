@@ -1,0 +1,102 @@
+.projects-section {
+    padding: 60px 30px;
+    background: linear-gradient(90deg, rgba(244,6,79,0.936186974789916) 0%, rgba(12,12,68,1) 35%, rgba(2,0,36,1) 100%);
+    color: #fff;
+}
+
+.projects-section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Caveat', cursive;
+}
+
+.projects-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;  /* Enable grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 30px;  /* Spacing between grid items */
+}
+
+.project-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;              /* Use flexbox for vertical layout within the item */
+    flex-direction: column;   /* Stack content vertically */
+}
+
+.project-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-image {
+    max-width: 100%;  /* Make image responsive */
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.project-description {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.project-description li {
+    line-height: 1.6;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.project-technology {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #444;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;      /* Push links to the bottom of the item */
+}
+
+.project-link {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 40px 15px;
+    }
+
+    .projects-section h2 {
+        font-size: 2em;
+    }
+
+    .projects-content {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}

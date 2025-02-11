@@ -11,6 +11,7 @@ import { Experience } from './components/Experience/Experience';
 import { Skills } from './components/Skills/skills';
 import { UpArrow } from './components/UpArrow/UpArrow';
 import { Loader } from './components/Loader/Loader';
+import { Projects } from './components/Projects/Projects';
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -70,6 +71,10 @@ function App() {
       
       <section id="about">
         <About />
+      </section>
+
+      <section id="projects">
+        <Projects />
       </section>
       
       <section id="skills">
