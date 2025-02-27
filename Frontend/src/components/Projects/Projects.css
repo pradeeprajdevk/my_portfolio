@@ -1,7 +1,7 @@
 .projects-section {
     padding: 60px 30px;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #e2e4e5;
+    color: #000000;
 }
 
 .projects-section h2 {
@@ -23,7 +23,7 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #8b8c89;
+    background-color: #c8c9c6;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;              /* Use flexbox for vertical layout within the item */
     flex-direction: column;   /* Stack content vertically */
@@ -74,7 +74,7 @@
 }
 
 .project-link {
-    background-color: #007bff; /* Blue */
+    background-color: #737474; /* Blue */
     color: white;
     padding: 8px 16px;
     text-decoration: none;
@@ -83,7 +83,7 @@
 }
 
 .project-link:hover {
-    background-color: #0056b3; /* Darker blue */
+    background-color: #535353; /* Darker blue */
 }
 
 /* Responsive Design */

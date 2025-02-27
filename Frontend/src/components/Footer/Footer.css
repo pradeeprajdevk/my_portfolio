@@ -1,10 +1,10 @@
 /* Footer Style */
 
 footer {
-    background-color: #d62828;
+    background-color: #e2e4e5;
     background-size: 200% 200%; /* Larger background size for animation */
     animation: gradientAnimation 10s ease infinite; /* Animate the gradient */
-    color: #fff;
+    color: #000000;
     text-align: center;
     padding: 20px 0; /* Vertical padding for spacing */
     font-family: 'Poppins', sans-serif; /* Simple, readable font */
@@ -33,21 +33,21 @@ footer {
 }
 
 .social-links a {
-    color: #fff;
+    color: #000000;
     margin: 0 10px;
     font-size: 1.2em;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #333; /* Accent color */
+    color: #737474; /* Accent color */
 }
 
 .back-to-top {
     display: block;
     margin: 20px auto 0;
     padding: 10px 20px;
-    color: #fff;
+    color: #000000;
     font-family: 'Poppins', sans-serif;
     font-size: 0.8em;
     border: none;
@@ -59,7 +59,7 @@ footer {
 }
 
 .back-to-top:hover {
-    color: #000000;
+    color: #737474;
 }
   
 @media (max-width: 768px) {

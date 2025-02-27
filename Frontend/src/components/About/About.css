@@ -40,7 +40,7 @@
 }
 
 .resume-button {
-    background-color: #fe5f55;
+    background-color: #737474;
     border: none;
     color: #ffffff;
     padding: 15px 32px;
@@ -55,7 +55,7 @@
 }
 
 .resume-button:hover {
-    background-color: #d90429;
+    background-color: #535353;
 }
 
 /* Responsive Design */

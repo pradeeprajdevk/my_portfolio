@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import "./Hero.css";
-import HeroImage from "../../assets/hero.png";
+// import HeroImage from "../../assets/hero.png";
 
 export const Hero = ({ user }) => {
     return (
@@ -12,7 +12,7 @@ export const Hero = ({ user }) => {
                 </p>
             </div>
             <div className="profile-image">
-                <img src={HeroImage} alt="Pradeep Raj" />
+                {/* <img src={HeroImage} alt="Pradeep Raj" /> */}
             </div>
         </div>
     )

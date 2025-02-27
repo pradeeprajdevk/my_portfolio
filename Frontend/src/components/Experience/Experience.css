@@ -1,7 +1,7 @@
 .experience-section {
     padding: 60px 30px;
-    background-color: #000000;
-    color: #fff;
+    background-color: #e2e4e5;
+    color: #000000;
 }
 .experience-section h2 {
     font-size: 2.5em;
@@ -24,12 +24,12 @@
     top: 0;
     height: 100%;
     width: 2px;
-    background-color: #d90429; /* Accent color */
+    background-color: #737474; /* Accent color */
 }
 
 .experience-card {
     position: relative;
-    background-color: #1e1e1e;
+    background-color: #ffffff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -43,7 +43,7 @@
     top: 20px;
     width: 20px;
     height: 20px;
-    background-color: #d90429; /* Accent color */
+    background-color: #535353; /* Accent color */
     border-radius: 50%;
     z-index: 1;
 }
@@ -62,7 +62,7 @@
 .experience-card h4 {
     font-size: 1.2em;
     margin-bottom: 10px;
-    color: #c1121f;
+    color: #535353;
     font-family: 'Poppins', sans-serif;
 }
 
