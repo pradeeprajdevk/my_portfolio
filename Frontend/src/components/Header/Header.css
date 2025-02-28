@@ -4,14 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e2e4e5;
     padding: 15px 30px;
     color: #000000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .header-container a {
-    font-family: 'Caveat', cursive; /* Custom font */
+    font-family: 'Roboto', sans-serif; /* Custom font */
     font-size: 1.8em; /* Large font size */
     font-weight: 700; /* Bold weight for emphasis */
     text-decoration: none;
@@ -21,7 +21,7 @@
     transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover */
 }
 
-.header-container a::first-letter {
+.header-container .logo {
     background-color: #000; /* Black background */
     color: #ffffff; /* White text color */
     padding: 2px 10px;
@@ -31,6 +31,7 @@
 
 .header-container a:hover {
     transform: scale(1.05); /* Slight scaling effect when hovered */
+    color: #f16b23;
 }
 
 .nav_title ul{
@@ -43,7 +44,7 @@
 }
 
 .nav_title a {
-    font-family: 'Caveat', cursive; /* Simple, readable font */
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     color: #000000;
     font-size: 1.1em;
@@ -51,7 +52,7 @@
 }
 
 .nav_title a:hover {
-    color: #737474;
+    color: #f16b23;
 }
   
 /* Add responsiveness for mobile view */
@@ -78,7 +79,7 @@
     /* Style for the hamburger menu (three dots) */
     .hamburger-menu {
         display: block;
-        background: none;
+        background-color: #000000;
         border: none;
         color: #fff;
         font-size: 2em;
@@ -107,5 +108,5 @@
 
 /* Style for when the menu is open (when active class is added) */
 .nav_title.active .hamburger-menu {
-    background-color: #333; /* Optional: change the color of the button when active */
+    background-color: #000000; /* Optional: change the color of the button when active */
 }

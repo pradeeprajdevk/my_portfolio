@@ -66,7 +66,7 @@ function App() {
 
   return (
     <>
-      <Header user={userData[0]}/>
+      <Header />
 
       <section id="hero">
         <Hero user={userData[0]} />

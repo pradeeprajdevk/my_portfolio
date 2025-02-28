@@ -1,13 +1,13 @@
 /* Footer Style */
 
 footer {
-    background-color: #e2e4e5;
+    background-color: #f16b23;
     background-size: 200% 200%; /* Larger background size for animation */
     animation: gradientAnimation 10s ease infinite; /* Animate the gradient */
     color: #000000;
     text-align: center;
     padding: 20px 0; /* Vertical padding for spacing */
-    font-family: 'Poppins', sans-serif; /* Simple, readable font */
+    font-family: 'Roboto', sans-serif; /* Simple, readable font */
     font-size: 0.9em; /* Smaller font size */
     /* position: fixed; */
     position: relative; 
@@ -48,7 +48,7 @@ footer {
     margin: 20px auto 0;
     padding: 10px 20px;
     color: #000000;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.8em;
     border: none;
     background: none;

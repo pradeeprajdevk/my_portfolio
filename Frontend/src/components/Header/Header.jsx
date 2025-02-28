@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import "./Header.css";
 import PropTypes from "prop-types";
 
-export const Header = ({ user }) => {
+export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -35,7 +35,7 @@ export const Header = ({ user }) => {
 
     return (
         <header className="header-container">
-            <a href="#" onClick={closeMenu}>{user ? user.name : "Pradeep Raj"}</a>
+            <a href="#" onClick={closeMenu} className="logo">PR</a>
             <nav className={`nav_title ${isMenuOpen ? 'active' : ''}`}>
                 <ul className="nav_list">
                     {navLinks.map((link) => (

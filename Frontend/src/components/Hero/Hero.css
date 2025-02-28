@@ -17,13 +17,13 @@
 .intro-text h1 {
     font-size: 3em;
     margin-bottom: 20px;
-    font-family: 'Caveat', cursive; /* Custom font for the heading */
+    font-family: 'Roboto', sans-serif; /* Custom font for the heading */
 }
 
 .intro-text p {
     font-size: 1.2em;
     line-height: 1.6;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .profile-image img {
