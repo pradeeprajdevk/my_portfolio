@@ -7,6 +7,8 @@ import {
   ProjectRoute,
   AboutRoute,
   ExperienceRoute,
+  SkillRoute,
+  ContactRoute,
 } from './routes/index.js';
 
 // Set the path for the environment file based on NODE_ENV
@@ -36,6 +38,8 @@ app.use('/users', UserRoute);
 app.use('/projects', ProjectRoute);
 app.use('/about', AboutRoute);
 app.use('/experience', ExperienceRoute);
+app.use('/skills', SkillRoute);
+app.use('/contact', ContactRoute);
 
 const PORT = process.env.PORT || 8001;
 

@@ -39,12 +39,53 @@ export const fetchExperienceData = createAsyncThunk(
   }
 );
 
+export const fetchSkillsData = createAsyncThunk(
+  'portfolio/getSkillsData',
+  async (_, { rejectWithValue }) => {
+    try {
+      const data = await userServices.getSkillsData();
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message || 'Failed to fetch skills data');
+    }
+  }
+);
+
+export const fetchProjectsData = createAsyncThunk(
+  'portfolio/getProjectsData',
+  async (_, { rejectWithValue }) => {
+    try {
+      const data = await userServices.getProjectsData();
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message || 'Failed to fetch projects data');
+    }
+  }
+);
+
+export const createContactForm = createAsyncThunk(
+  'portfolio/postContact',
+  async (contactData, { rejectWithValue }) => {
+    try {
+      const data = await userServices.postContact(contactData);
+      return data;
+    } catch (error) {
+      return rejectWithValue(
+        error.message || 'Failed to submit the contact details'
+      );
+    }
+  }
+);
+
 const portfolioSlice = createSlice({
   name: 'portfolio',
   initialState: {
     user: {},
     about: {},
     experience: [],
+    skills: [],
+    projects: [],
+    contact: {},
     status: 'idle',
     error: null,
   },
@@ -80,6 +121,39 @@ const portfolioSlice = createSlice({
         state.experience = action.payload;
       })
       .addCase(fetchExperienceData.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload;
+      })
+      .addCase(fetchSkillsData.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchSkillsData.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.skills = action.payload;
+      })
+      .addCase(fetchSkillsData.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload;
+      })
+      .addCase(fetchProjectsData.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchProjectsData.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.projects = action.payload;
+      })
+      .addCase(fetchProjectsData.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload;
+      })
+      .addCase(createContactForm.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(createContactForm.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.contact = action.payload;
+      })
+      .addCase(createContactForm.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload;
       });

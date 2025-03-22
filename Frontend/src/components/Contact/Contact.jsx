@@ -1,7 +1,14 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { createContactForm } from "../../redux/portfolioSlice";
+import { Loader } from "../Loader/Loader";
+
 import "./Contact.css";
 
 export const Contact = () => {
+
+    const dispatch = useDispatch();
+    const { contact, status, error } = useSelector((state) => state.portfolio);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -20,7 +27,9 @@ export const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission(e.g., send data to an API)
-        console.log("Form Data:", formData);
+        
+        dispatch(createContactForm(formData));
+
         alert("Thank you for your messages! I'll get back to you soon.");
         setFormData({ name: "", email: "", message: "" });
     };
@@ -28,6 +37,11 @@ export const Contact = () => {
     return (
         <section id="contact" className="contact-section">
             <h2>Contact Me</h2>
+
+            { !contact && status === 'loading' && <Loader /> }
+            
+            { !contact && status === 'failed' && <p>{error}</p> }
+
             <div className="contact-content">
                 <div className="contact-info">
                     <h3>Get in Touch</h3>
