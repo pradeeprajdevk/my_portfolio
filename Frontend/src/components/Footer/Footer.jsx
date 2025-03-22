@@ -1,9 +1,13 @@
+import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import "./Footer.css";
-import PropTypes from "prop-types";
+import { fetchUserData } from "../../redux/portfolioSlice";
 
-export const Footer = ({ user }) => {
+export const Footer = () => {
 
+    const dispatch = useDispatch();
+    const {  user } = useSelector((state) => state.portfolio);
+    
     const currentYear = new Date().getFullYear();
 
     const [showBackToTop, setShowBackToTop] = useState(false);
@@ -16,7 +20,13 @@ export const Footer = ({ user }) => {
 
         // Update the URL without reloading the page
         history.pushState(null, '', '#');
-    }
+    };
+
+    useEffect(() => {
+        if (!user) {
+            dispatch(fetchUserData());
+        }
+    }, [dispatch, user]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,7 +39,7 @@ export const Footer = ({ user }) => {
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [dispatch]);
 
     return (
         <footer aria-label="Footer">
@@ -37,7 +47,7 @@ export const Footer = ({ user }) => {
                 © {currentYear} {user ? user.name : "PradeepRaj.K"}, All rights reserved
             </p>
             <div className="social-links">
-                {user.socialLinks.map((link) => ( 
+                {user?.socialLinks?.map((link) => ( 
                     <a key={link.id} href={link.url} aria-label={link.label}>
                         <i className={link.icon}></i>
                     </a>
@@ -51,10 +61,3 @@ export const Footer = ({ user }) => {
         </footer>
     )
 }
-  
-Footer.propTypes = {
-    user: PropTypes.shape({
-        name: PropTypes.string,
-        socialLinks: PropTypes.array,
-    })
-};

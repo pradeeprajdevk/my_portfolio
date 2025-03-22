@@ -1,42 +1,27 @@
-import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import "./Experience.css";
 import { Loader } from "../Loader/Loader";
-import { getExperienceData } from "../../services/userServices";
+import { fetchExperienceData } from "../../redux/portfolioSlice";
 
 export const Experience = () => {
-
-    const [myExperience, setMyExperience] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const dispatch = useDispatch();
+    const { experience, status, error } = useSelector((state) => state.portfolio);
     
     useEffect(() => {
-        const fetchExperienceData = async () => {
-            try {
-                const data = await getExperienceData();
-                setMyExperience(data);
-            } catch(err) {
-                setError(err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchExperienceData();
-    }, []);
-
-    if (loading) {
-        return <Loader />;
-    }
-    
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
+        dispatch(fetchExperienceData());
+    }, [dispatch]);
 
     return (
         <section id="experience" className="experience-section">
             <h2>Experience</h2>
+
+            {!experience && status === "loading" && <Loader />}
+
+            {!experience && status === "failed" && <p>{error}</p>}
+
             <div className="experience-timeline">
-                {myExperience.map((exp) => (
+                {experience.map((exp) => (
                     <div key={exp._id} className="experience-card">
                         <h3>{exp.title}</h3>
                         <h4>{exp.company}</h4>

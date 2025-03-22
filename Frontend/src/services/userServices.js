@@ -1,43 +1,46 @@
-export const fetchUserData = async () => {
-  try {
-    const response = await fetch('http://localhost:8000/users');
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch user data');
+// const headers = {
+//   'Content-Type': 'application/json',
+// };
+
+export const userServices = {
+  fetchUserData: async () => {
+    try {
+      const response = await fetch(`${apiUrl}/users`);
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch user data');
+      }
+      return await response.json(); // return fetched data in promise
+    } catch (error) {
+      throw new Error(error.message); // Throw an error if the request fails
     }
-    const data = response.json();
-    return data; // Return the fetched data
-  } catch (error) {
-    throw new Error(error.message); // Throw an error if the request fails
-  }
-};
+  },
+  fetchAboutData: async () => {
+    try {
+      const response = await fetch(`${apiUrl}/about`);
 
-export const fetchAboutData = async () => {
-  try {
-    const response = await fetch('http://localhost:8000/about');
+      if (!response.ok) {
+        throw new Error('Failed to fetch user data');
+      }
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch user data');
+      return response.json(); // return fetched data in promise
+    } catch (error) {
+      throw new Error(error.message); // Throw an error if the request fails
     }
+  },
+  getExperienceData: async () => {
+    try {
+      const response = await fetch(`${apiUrl}/experience`);
 
-    const data = await response.json();
-    return data; // Return the fetched data
-  } catch (error) {
-    throw new Error(error.message); // Throw an error if the request fails
-  }
-};
+      if (!response.ok) {
+        throw new Error('Failed to fetch user data');
+      }
 
-export const getExperienceData = async () => {
-  try {
-    const response = await fetch('http://localhost:8000/experience');
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch user data');
+      return response.json(); // return fetched data in promise
+    } catch (error) {
+      throw new Error(error.message); // Throw an error if the request fails
     }
-
-    const data = await response.json();
-    return data; // Return the fetched data
-  } catch (error) {
-    throw new Error(error.message); // Throw an error if the request fails
-  }
+  },
 };

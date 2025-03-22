@@ -1,38 +1,19 @@
 import { useState, useEffect } from 'react';
 
 import './App.css'
-import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
-import { fetchUserData } from "./services/userServices"; // Import the service
 import { Hero } from './components/Hero/Hero';
 import { About } from './components/About/About';
-import { Contact } from './components/Contact/Contact';
-import { Experience } from './components/Experience/Experience';
-import { Skills } from './components/Skills/skills';
-import { UpArrow } from './components/UpArrow/UpArrow';
-import { Loader } from './components/Loader/Loader';
 import { Projects } from './components/Projects/Projects';
+import { Skills } from './components/Skills/skills';
+import { Experience } from './components/Experience/Experience';
+import { Contact } from './components/Contact/Contact';
+import { Footer } from './components/Footer/Footer'
+
+import { UpArrow } from './components/UpArrow/UpArrow';
 
 function App() {
-  const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [isHeaderOrHeroVisible, setIsHeaderOrHeroVisible] = useState(true);
-
-  useEffect(() => {
-    const getUserData = async () => {
-      try {
-        const data = await fetchUserData();
-        setUserData(data);
-      } catch(error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getUserData();
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,14 +26,6 @@ function App() {
         window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   const handleUpArrowClick = () => {
     window.scrollTo({
@@ -69,7 +42,7 @@ function App() {
       <Header />
 
       <section id="hero">
-        <Hero user={userData[0]} />
+        <Hero />
       </section>
       
       <section id="about">
@@ -96,7 +69,7 @@ function App() {
         <UpArrow onClick={handleUpArrowClick} />
       )}
 
-      <Footer user={userData[0]} />
+      <Footer/>
     </>
   )
 }

@@ -1,43 +1,30 @@
-import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import "./About.css";
 import { Loader } from '../Loader/Loader';
-import { fetchAboutData } from "../../services/userServices";
+import { fetchAboutData } from '../../redux/portfolioSlice';
 
 export const About = () => {
-    const [aboutData, setAboutData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+
+    const dispatch = useDispatch();
+    const { about, status, error } = useSelector((state) => state.portfolio);
 
     useEffect(() => {
-        const getAboutData = async() => {
-            try {
-                const data = await fetchAboutData();
-                setAboutData(data[0]);
-            } catch(error) {
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        getAboutData();
-    }, []);
-
-    if (loading) {
-        return <Loader />;
-    }
-    
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
+        dispatch(fetchAboutData());
+    }, [dispatch]);
 
     return (
         <section id = "about" className="about-section">
             <h2>About Me</h2>
+
+            { !about && status === 'loading' && <Loader /> }
+
+            { !about && status === 'failed' && <p>{error}</p> }
+
             <div className="about-content">
                 <div className="about-text-container">  
                     <div className="about-text">
-                        <p  style={{ whiteSpace: 'pre-line' }}>{aboutData.description}</p>
+                        <p  style={{ whiteSpace: 'pre-line' }}>{about.description}</p>
                     </div>
                     <div className="about-download">
                         <a href="/resume/PradeepRajK.pdf" download="PradeepRajK.pdf"
