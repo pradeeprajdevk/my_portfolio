@@ -20,7 +20,25 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+// Allow requests only from your Vercel frontend
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://portfoliofrontend-nu.vercel.app', // Replace with your actual frontend URL
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  credentials: true, // Enable sending cookies or headers with credentials
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/', (req, res) => {
