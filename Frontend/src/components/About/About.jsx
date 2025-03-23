@@ -17,8 +17,8 @@ export const About = () => {
         <section id = "about" className="about-section">
             <h2>About Me</h2>
 
+            {/* Conditional rendering based on status */}
             { !about && status === 'loading' && <Loader /> }
-
             { !about && status === 'failed' && <p>{error}</p> }
 
             <div className="about-content">

@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import "./Header.css";
-import PropTypes from "prop-types";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,17 +12,18 @@ export const Header = () => {
         setIsMenuOpen(false);
     }
 
+    // Memoize handleResize to avoid creating a new function on each render
+    const handleResize = useCallback(() => {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
+    }, []); // Empty dependency array, as we don't need to re-run this effect based on state changes
+
     // Close menu on window resize (if screen size is larger than 768px)
     useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth > 768) {
-                closeMenu();
-            }
-        };
-
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    }, [handleResize]); // Only re-add the event listener if `handleResize` changes
 
     const navLinks = [
         { id: 1, text: "About", href: "#about" },
@@ -56,11 +56,3 @@ export const Header = () => {
         </header>
     )
 }
-
-
-Header.propTypes = {
-    user: PropTypes.shape({
-        name: PropTypes.string,
-    })
-};
-Header.displayName = 'Header'; 

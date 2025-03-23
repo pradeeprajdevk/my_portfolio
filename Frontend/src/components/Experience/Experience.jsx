@@ -16,11 +16,12 @@ export const Experience = () => {
         <section id="experience" className="experience-section">
             <h2>Experience</h2>
 
+            {/* Conditional rendering for loading and error */}
             {!experience && status === "loading" && <Loader />}
-
             {!experience && status === "failed" && <p>{error}</p>}
 
             <div className="experience-timeline">
+                {/* Rendering experience list */}
                 {experience.map((exp) => (
                     <div key={exp._id} className="experience-card">
                         <h3>{exp.title}</h3>

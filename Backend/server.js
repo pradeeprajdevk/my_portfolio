@@ -11,16 +11,9 @@ import {
   ContactRoute,
 } from './routes/index.js';
 
-// Set the path for the environment file based on NODE_ENV
-const envFile =
-  process.env.NODE_ENV === 'production'
-    ? '.env.production'
-    : '.env.development';
-
 // Load the environment variables
-dotenv.config({ path: envFile });
+dotenv.config();
 
-console.log(`Loaded env file: ${envFile}`);
 console.log(`PORT: ${process.env.PORT}`); // Debugging line to check if the variable is loaded
 
 connectDB();

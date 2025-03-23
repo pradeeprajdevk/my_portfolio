@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createContactForm } from "../../redux/portfolioSlice";
 import { Loader } from "../Loader/Loader";
@@ -22,9 +22,9 @@ export const Contact = () => {
             ...formData,
             [name]: value,
         });
-    };
+    }; // `handleChange` will only be re-created if dependencies change (currently empty)
 
-    const handleSubmit = (e) => {
+    const handleSubmit = useCallback((e) => {
         e.preventDefault();
         // Handle form submission(e.g., send data to an API)
         
@@ -32,7 +32,7 @@ export const Contact = () => {
 
         alert("Thank you for your messages! I'll get back to you soon.");
         setFormData({ name: "", email: "", message: "" });
-    };
+    }, [dispatch, formData]); // `handleSubmit` will re-create only if `dispatch` or `formData` changes
 
     return (
         <section id="contact" className="contact-section">
